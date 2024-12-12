@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - gh-pages
-    schedule:
-     - cron: '0 0 * * *'
-    workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
-    name: Build and comit on same branch
+    name: Build and commit on same branch
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
