@@ -19,10 +19,9 @@ jobs:
       - name: create .env file
         run: echo "${{secrets.DOT_ENV}}" > .env
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: ${{ steps.checkout.outputs.ruby-version }}
+      - name: Setup ruby 
+        run: echo "::set-output name=RUBY_VERSION::$(cat .ruby-version)"
+        id: rbenv
       
       - name: Use Ruby ${{ steps.rbenv.outputs.RUBY-VERSION}}
         uses: ruby/setup-ruby@v1
