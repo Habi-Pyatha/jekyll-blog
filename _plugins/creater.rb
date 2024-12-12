@@ -33,6 +33,7 @@ module Jekyll
 layout: post
 title: #{card.name}
 date: #{article_date}
+permalink: #{card.name}
 ---
 
 #{card.desc}
